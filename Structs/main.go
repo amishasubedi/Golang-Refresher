@@ -13,6 +13,9 @@ func main() {
 	fmt.Println(data)
 	fmt.Printf("Details are: %+v\n ", data)
 
+	data.GetStatus()
+	data.NewMail()
+
 	// if else
 	if data.Age > 21 {
 		fmt.Println("Adult")
@@ -96,4 +99,14 @@ type User struct {
 	Email  string
 	Status bool
 	Age    int
+}
+
+// methods
+func (u User) GetStatus() {
+	fmt.Println("Status is: ", u.Status)
+}
+
+func (u User) NewMail() {
+	u.Email = "test.gmail.com"
+	fmt.Println("New Email is: ", u.Email)
 }
